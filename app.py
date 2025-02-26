@@ -1,13 +1,10 @@
 from flask import Flask, render_template, Response
-import time
 
-app = Flask(__name__, template_folder=r'C:\Users\SJCET\Downloads\New folder\project-folder\templates')
+app = Flask(__name__, template_folder=r"C:\Users\user\DDOS_stimulation\project-folder\templates")
 
-
-
-# Variable to track request count
+# Global request count (not thread-safe)
 request_count = 0
-THRESHOLD = 100  # Number of requests before server returns 503
+THRESHOLD = 100  # Number of requests before returning 503
 
 @app.route("/")
 def home():
